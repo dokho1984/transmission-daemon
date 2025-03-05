@@ -8,7 +8,7 @@ RUN apt update \
 COPY setting.json /root/.config/transmission-daemon/settings.json
 
 EXPOSE 9091
-VOLUME ["/var/lib/transmission-daemon/downloads"]
+VOLUME ["/root/.config/transmission-daemon"]
 
 ENTRYPOINT ["transmission-daemon", "-f", "--log-error"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
