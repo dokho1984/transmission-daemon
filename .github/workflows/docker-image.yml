@@ -13,4 +13,5 @@ jobs:
         run: docker build . -t dokho1984/transmission-daemon:latest
       - name: push
         run: |
+          docker login -u dokho1984 -p ${{ secrets.DOCKERHUB}}
           docker push dokho1984/transmission-daemon:latest
